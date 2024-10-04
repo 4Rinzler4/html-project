@@ -1,65 +1,66 @@
 <!DOCTYPE html>
-
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
-    <title>CatPhotoApp</title>
-  </head>
-  <body>
-    <main>
-      <h1>CatPhotoApp</h1>
-      <section>
-        <h2>Cat Photos</h2>
-        <!-- TODO: Add link to cat photos -->
-        <p>See more <a target="_blank" href="https://freecatphotoapp.com">cat photos</a> in our gallery.</p>
-        <a href="https://freecatphotoapp.com"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
-      </section>
-      <section>
-        <h2>Cat Lists</h2>
-        <h3>Things cats love:</h3>
-        <ul>
-          <li>cat nip</li>
-          <li>laser pointers</li>
-          <li>lasagna</li>
-        </ul>
-        <figure>
-          <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/lasagna.jpg" alt="A slice of lasagna on a plate.">
-          <figcaption>Cats <em>love</em> lasagna.</figcaption>  
-        </figure>
-        <h3>Top 3 things cats hate:</h3>
-        <ol>
-          <li>flea treatment</li>
-          <li>thunder</li>
-          <li>other cats</li>
-        </ol>
-        <figure>
-          <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg" alt="Five cats looking around a field.">
-          <figcaption>Cats <strong>hate</strong> other cats.</figcaption>  
-        </figure>
-      </section>
-      <section>
-        <h2>Cat Form</h2>
-        <form action="https://freecatphotoapp.com/submit-cat-photo">
-          <fieldset>
-            <legend>Is your cat an indoor or outdoor cat?</legend>
-            <label><input id="indoor" type="radio" name="indoor-outdoor" value="indoor" checked> Indoor</label>
-            <label><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor"> Outdoor</label>
-          </fieldset>
-          <fieldset>
-            <legend>What's your cat's personality?</legend>
-            <input id="loving" type="checkbox" name="personality" value="loving" checked> <label for="loving">Loving</label>
-            <input id="lazy" type="checkbox" name="personality" value="lazy"> <label for="lazy">Lazy</label>
-            <input id="energetic" type="checkbox" name="personality" value="energetic"> <label for="energetic">Energetic</label>
-          </fieldset>
-          <input type="text" name="catphotourl" placeholder="cat photo URL" required>
-          <button type="submit">Submit</button>
-        </form>
-      </section>
-    </main>
-    <footer>
-      <p>
-        No Copyright - <a href="https://www.freecodecamp.org">freeCodeCamp.org</a>
-      </p>
-    </footer>
-  </body>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="favicon" href="img/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>RetroStyle</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header__container container">
+            <div class="header__line">
+                <div class="header__logo">
+                    <img src="img/logo.png" alt="Логотип" oncontextmenu="return false;">
+                </div>
+                <nav class="header__nav nav">
+                    <a class="nav__item" href="#">ГОЛОВНА</a>
+                    <a class="nav__item" href="#">КАТАЛОГ</a>
+                    <a class="nav__item" href="#">ПРО НАС</a>
+                    <a class="nav__item" href="#">РОЗПРОДАЖ</a>
+                </nav>
+                <button class="header__burger burger">
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                </button>
+                <a class="header__cart cart" href="#">
+                    <img class="cart__img" src="img/cart.png" alt="Корзина">
+                </a>
+                <div class="header__time" id="time" style="font-weight: bold;"> 
+                    <span id="id_H" class="time__hour" style="color: rgb(247, 0, 255);"></span> :
+                    <span id="id_M" class="time__minute" style="color: rgb(247, 0, 255);"></span> :
+                    <span id="id_S" class="time__second" style="color: rgb(247, 0, 255);"></span>    
+                </div>
+                <div class="header__phone phone">
+                    <img class="phone__img" src="img/phone.png" alt="Телефон">
+                    <a class="phone__number" href="#">+38-000-000-00-00</a>
+                    <span class="phone__text">Номер служби підтримки</span>
+                </div>
+                <a class="header__button button" href="#">ОФОРМЛЕННЯ</a>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        function time() {
+            const date = new Date(),
+                h = date.getHours(),
+                m = date.getMinutes(),
+                s = date.getSeconds();
+
+            document.getElementById("id_H").textContent = (h < 10) ? '0' + h : h;
+            document.getElementById("id_M").textContent = (m < 10) ? '0' + m : m;
+            document.getElementById("id_S").textContent = (s < 10) ? '0' + s : s;
+        }
+        setInterval(time, 1000);
+
+        document.querySelector('.burger').addEventListener('click', () => {
+            document.querySelector('.nav').classList.toggle('nav--active');
+        });
+    </script>
+</body>
 </html>

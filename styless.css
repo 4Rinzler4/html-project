@@ -1,0 +1,197 @@
+/* Загальні налаштування */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    cursor: url(/img/cursor.png), auto;
+}
+
+a:hover {
+    cursor: url(/img/point.png), pointer;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Стиль для хедера */
+.header {
+    background-image: url(/img/bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flexbox;
+    align-items: center;
+}
+
+.header__line {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.header__logo img {
+    max-width: 150px;
+}
+
+/* Навігація для десктопів */
+.nav {
+    display: flex;
+    gap: 30px;
+}
+
+.nav__item {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav__item:hover {
+    color: #ff00ff;
+}
+
+/* Бургер меню для мобільних пристроїв */
+.burger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.burger__line {
+    background-color: #fff;
+    height: 3px;
+    width: 100%;
+}
+
+.cart {
+    position: relative;
+}
+
+.cart__img {
+    width: 50px;
+    transition: transform 0.3s ease;
+}
+
+.cart__img:hover {
+    transform: scale(1.1);
+}
+
+/* Блок з часом */
+.header__time {
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Стиль номера телефону */
+.phone {
+    display: flex;
+    align-items: center;
+}
+
+.phone__img {
+    width: 24px;
+    margin-right: 10px;
+}
+
+.phone__text {
+    color: #fff;
+    font-size: 16px;
+}
+
+.phone__number {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.phone__number:hover {
+    color: #ff00ff;
+}
+
+/* Стиль кнопки */
+.button {
+    background-color: #ff00ff;
+    color: #fff;
+    padding: 14px 18px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #990099;
+}
+
+/* Адаптивні стилі для мобільних пристроїв */
+@media (max-width: 768px) {
+    .nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        background-color: rgba(0, 0, 0, 0.9);
+        width: 100%;
+        height: calc(100vh - 80px);
+        justify-content: flex-start;
+        align-items: center;
+        gap: 20px;
+        padding-top: 20px;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .nav--active {
+        display: flex;
+    }
+
+    .header__logo img {
+        max-width: 120px;
+    }
+
+    .cart__img {
+        width: 40px;
+    }
+
+    .header__time {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header__logo img {
+        max-width: 100px;
+    }
+
+    .cart__img {
+        width: 35px;
+    }
+
+    .header__time {
+        font-size: 14px;
+    }
+
+    .button {
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+}
