@@ -9,11 +9,11 @@ body {
     font-family: 'Open Sans', sans-serif;
     background-color: #f4f4f4;
     margin: 0;
-    cursor: url(/img/cursor.png), auto;
+    cursor: url(img/cursor.png), auto;
 }
 
 a:hover {
-    cursor: url(/img/point.png), pointer;
+    cursor: url(img/point.png), pointer;
 }
 
 .container {
@@ -24,7 +24,7 @@ a:hover {
 
 /* Стиль для хедера */
 .header {
-    background-image: url(/img/bg.png);
+    background-image: url(img/bg.png);
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
